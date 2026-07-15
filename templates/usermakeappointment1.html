@@ -1,0 +1,182 @@
+{% extends 'userheader.html'  %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+<body>
+
+  {% block content %}
+    <style type="text/css">
+    table,
+    tr,
+    td,
+    th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    th,
+    td {
+      height: 50px;
+    }
+  </style>
+  <main class="main">
+<!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">User Make Appointment Page</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="usermainpage">Home</a></li>
+            <li class="current">User Make Appointment Page</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <form action="" method="post" data-aos="fade-up" data-aos-delay="200"
+            enctype="multipart/form-data">
+              <div class="row gy-4">
+
+                <div class="col-md-12">
+                  {{msg}}
+                </div>
+
+                 <div class="col-md-6">
+                  <input type="text" name="pid" class="form-control" placeholder="Pet Id" required=""
+                  maxlength="15" readonly value="{{petdata.id}}">
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" name="pname" class="form-control" placeholder="Pet Name" required=""
+                  maxlength="15" readonly value="{{petdata.PetName}}">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="text" name="pettype" class="form-control" placeholder="Pet Name" required=""
+                  maxlength="15" readonly value="{{petdata.PetType}}">
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" name="petweight" class="form-control" placeholder="Pet Weight" required=""
+                  readonly value="{{petdata.PetWeight}}">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="text" class="form-control" name="petheight" placeholder="Pet Height" required=""
+                  readonly value="{{petdata.PetHeight}}">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="text" class="form-control" name="petcolor" placeholder="Pet Color" required=""
+                  readonly value="{{petdata.PetColor}}">
+                </div>
+
+                <div class="col-md-6 ">
+                  <img src="/static/uploads/{{petdata.FileName}}" width="150px" height="150px"/>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="description" rows="6" placeholder="Pet Description" required=""
+                  readonly>
+                    {{petdata.Description}}
+                  </textarea>
+                </div>
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+    <!-- About 2 Section -->
+    <section id="about-2" class="about-2 section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+
+
+
+          <div class="col-lg-12">
+            <h3 class="pt-0 pt-lg-5">User Select Doctor For Appointment</h3>
+
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+
+              <div class="tab-pane fade show active" id="about-2-tab1">
+
+                <p class="fst-italic">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Doctor Id</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>EmailId</th>
+                      <th>Phone Number</th>
+                      <th>Specialization</th>
+                      <th>ExpInYears</th>
+                      <th>DoctorFees</th>
+                      <th>Image</th>
+                      <th>Select Doctor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for row in doctordata %}
+                    <tr>
+                      <td>{{row.id}}</td>
+                      <td>{{row.FirstName}}</td>
+                      <td>{{row.LastName}}</td>
+                      <td>{{row.EmailId}}</td>
+                      <td>{{row.PhoneNumber}}</td>
+                      <td>{{row.ExpInYears}}</td>
+                      <td>{{row.Specialization}}</td>
+                      <td>{{row.DoctorFees}}</td>
+                      <td>
+                        <img src="/static/uploads/{{row.FileName}}" width="50px" height="50px" />
+                      </td>
+                      <td>
+                      <a href="/usermakeappointment2?id={{row.id}}">Select Doctor</a>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+                </p>
+
+              </div><!-- End Tab 1 Content -->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About 2 Section -->
+      </main>
+{% endblock %}
+</body>
+
+</html>

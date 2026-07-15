@@ -1,0 +1,98 @@
+{% extends 'userheader.html'  %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+<body>
+
+  {% block content %}
+  <main class="main">
+<!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">User Search Accessories</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/usermainpage">Home</a></li>
+            <li class="current">User Search Accessories</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <form action="/usersearchaccessories" method="post" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-12">
+                  {{msg}}
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" name="aname" class="form-control" placeholder="Accessory Name" required=""
+                  style="width:300px;">
+                  
+                </div>
+
+                <div class="col-md-6">                  
+                  <button type="submit">Search Accessory</button> 
+                </div>
+                
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+        <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          {% for row in data %}
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex position-relative h-100">
+              <div>
+                <h4 class="title"><a href="#" class="stretched-link">Accessory Name : {{row.AccessoryName}}</a></h4>
+                <h5>Accessory Type : {{row.AccessoryType}} </h5>
+                <h5>Quantity : {{row.Quantity}} </h5>
+                <h5>Price : {{row.Price}} </h5>
+                <p class="description">
+                {{row.Description}}
+                </p>
+                <p>
+                  Uploaded Image :
+                  <img src="/static/uploads/{{row.FileName}}" width="50px" height="50px"/>
+                </p>
+                <h4 class="title">
+                  <a href="/useraddtocart?id={{row.id}}" class="stretched-link"
+                  style="color: green;">Add To Cart</a></h4>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+          {% endfor %}
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+      </main>
+{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+{% extends 'userheader.html' %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+
+<body>
+
+  {% block content %}
+  <style type="text/css">
+    table,
+    tr,
+    td,
+    th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    th,
+    td {
+      height: 50px;
+    }
+  </style>
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">User Make Appointment Page</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="usermainpage">Home</a></li>
+            <li class="current">User Make Appointment Page</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <form action="" method="post" data-aos="fade-up" data-aos-delay="200" enctype="multipart/form-data">
+              <div class="row gy-4">
+
+                <div class="col-md-12">
+                  {{msg}}
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" name="pid" class="form-control" placeholder="Pet Id" required="" maxlength="15"
+                    readonly value="{{petdata.id}}">
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" name="pname" class="form-control" placeholder="Pet Name" required="" maxlength="15"
+                    readonly value="{{petdata.PetName}}">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="text" name="pettype" class="form-control" placeholder="Pet Name" required=""
+                    maxlength="15" readonly value="{{petdata.PetType}}">
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" name="petweight" class="form-control" placeholder="Pet Weight" required="" readonly
+                    value="{{petdata.PetWeight}}">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="text" class="form-control" name="petheight" placeholder="Pet Height" required="" readonly
+                    value="{{petdata.PetHeight}}">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="text" class="form-control" name="petcolor" placeholder="Pet Color" required="" readonly
+                    value="{{petdata.PetColor}}">
+                </div>
+
+                <div class="col-md-6 ">
+                  <img src="/static/uploads/{{petdata.FileName}}" width="150px" height="150px" />
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="description" rows="6" placeholder="Pet Description" required=""
+                    readonly>
+                    {{petdata.Description}}
+                  </textarea>
+                </div>
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <form action="/usermakeappointment3" method="post" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="doctorid" class="form-control" placeholder="Doctor Id" required=""
+                    pattern="[a-zA-Z]{3,15}" maxlength="15" readonly value="{{doctordata.id}}">
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" name="fname" class="form-control" placeholder="First Name" required=""
+                    pattern="[a-zA-Z]{3,15}" maxlength="15" readonly value="{{doctordata.FirstName}}">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="text" class="form-control" name="lname" placeholder="Last Name" required=""
+                    pattern="[a-zA-Z]{1,15}" maxlength="15" readonly value="{{doctordata.LastName}}">
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" name="phnum" class="form-control" placeholder="Phone Number" required=""
+                    pattern="[6789][0-9]{9}" maxlength="10" title="Phone Num Should strats from 6,7,8,9 & 10 digits"
+                    readonly value="{{doctordata.PhoneNumber}}">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="" readonly
+                    value="{{doctordata.EmailId}}">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="address" rows="6" placeholder="Address" required=""
+                    readonly>{{doctordata.Address}}</textarea>
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="text" name="specialization" class="form-control" placeholder="Specialization" required=""
+                    pattern="[0-9]{1,5}" maxlength="5" readonly value="{{doctordata.Specialization}}" />
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="text" name="expinyears" class="form-control" placeholder="Doctor Fees" required=""
+                    pattern="[0-9]{1,5}" maxlength="5" readonly value="{{doctordata.ExpInYears}}" />
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" name="doctorfees" class="form-control" placeholder="Doctor Fees" required=""
+                    pattern="[0-9]{1,5}" maxlength="5" readonly value="{{doctordata.DoctorFees}}" />
+                </div>
+
+                <div class="col-md-6 ">
+                  <img src="/static/uploads/{{doctordata.FileName}}" width="150px" height="150px" />
+                </div>
+
+                <div class="col-md-6">
+                  <input type="date" name="appdate" class="form-control" placeholder="Appointment Date" required="" 
+                  min="{{today}}"/>
+                </div>
+
+                <div class="col-md-6">
+                  <input type="time" name="apptime" class="form-control" placeholder="Appointment Time" required="" />
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <button type="submit" style="width: 150px; height: 75px; border-radius: 10px;">Make Appointment</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+  {% endblock %}
+</body>
+
+</html>

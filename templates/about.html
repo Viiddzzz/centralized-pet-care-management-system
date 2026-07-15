@@ -1,0 +1,88 @@
+{% extends 'commonheader.html'  %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">  
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+</head>
+
+<body class="index-page">
+
+  {% block content %}
+  <main class="main">
+
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">About</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li class="current">About</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- About 2 Section -->
+    <section id="about-2" class="about-2 section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-5">
+            <div class="about-img">
+              <img src="/static/assets/img/Pic1.jfif" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <h3 class="pt-0 pt-lg-5"> About Centralized Pet Care System </h3>
+
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+
+              <div class="tab-pane fade show active" id="about-2-tab1">
+
+                <p class="fst-italic">
+                 Pet Management Systems (PMS) have emerged as comprehensive digital platforms 
+designed to assist pet owners in monitoring and managing various aspects of their pets' health, behavior, 
+and daily needs. These systems leverage technologies like mobile applications, cloud computing, and 
+IoT-enabled devices to provide functionalities such as health tracking, behavior analysis, activity 
+monitoring, and microchipping. By offering tools like reminder notifications, real-time updates, and 
+secure data storage, PMS streamline the complexities of pet care, enabling informed decision-making 
+for pet owners.
+                </p>
+
+<p>Key Aspects of Online Career Guidance & Placement</p>
+<ol><li>
+Health and Records Management: Stores medical history, vaccination records, and medication reminders.</li> <li> 
+Scheduling and Services: Allows booking for veterinary visits, grooming sessions, and boarding services.</li> <li> 
+Pet Profiles and Documentation: Maintains detailed profiles (photos, behavioral history, owner information), which is useful for pet-friendly housing and pet-sitting services.</li> <li> 
+Virtual Consultations: Connects owners with veterinarians through telehealth services to manage chronic conditions or minor issues.</li> <li> 
+Connectivity: Offers mobile app accessibility for tracking pet activity and health in real-time.</li> <li> 
+Business Operations: Provides tools for companies to manage client databases, payments, and compliance.</li>
+</ol>
+              </div><!-- End Tab 1 Content -->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About 2 Section -->
+
+  </main>
+{% endblock %}
+
+</body>
+
+</html>

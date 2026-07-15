@@ -1,0 +1,195 @@
+{% extends 'doctorheader.html' %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+
+<body>
+
+  {% block content %}
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Doctor Update Prescription</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/doctormainpage">Home</a></li>
+            <li class="current">Doctor Update Prescription</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <form action="/doctorupdateprescription1" method="post">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" name="appid" id="appid" placeholder="App Id"
+                      value="{{data.id}}" readonly style="color: black;">
+                    <label for="fname">Appointment Id</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" name="did" id="did" placeholder="Doctor Id"
+                      value="{{data.DoctorId}}" readonly style="color: black;">
+                    <label for="fname">Doctor Id</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name"
+                      value="{{data.FirstName}}" readonly style="color: black;">
+                    <label for="fname">First Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name"
+                      value="{{data.LastName}}" readonly style="color: black;">
+                    <label for="lname">Last Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" name="phnum" id="phnum" placeholder="Phone Number"
+                      value="{{data.PhoneNumber}}" readonly style="color: black;">
+                    <label for="phnum">Phone Number</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                      value="{{data.EmailId}}" readonly style="color: black;">
+                    <label for="email">Your Email</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" name="specialization" id="specialization"
+                      placeholder="Specialization" value="{{data.Specialization}}" readonly style="color: black;">
+                    <label for="email">Specialization</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" name="fees" id="fees" placeholder="Doctor Fees" required=""
+                      value="{{data.DoctorFees}}" readonly style="color: black;">
+                    <label for="email">Doctor Fees</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" name="adate" id="adate" placeholder="Appointment Date"
+                      style="color: black;" value="{{data.AppointmentDate}}" readonly>
+                    <label for="email">Appointment Date</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" name="atime" id="atime" placeholder="Appointment Time"
+                      required="" style="color: black;" value="{{data.AppointmentTime}}" readonly>
+                    <label for="email">Appointment Time</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <table>
+                    <tr>
+                      <th>Prescription1</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select name="type1" class="form-control" style="width:200px;">
+                          <option>Tablet</option>
+                          <option>Syrup</option>
+                          <option>Cream</option>
+                        </select>
+                      </td>
+                      <td>
+                        <input type="text" name="pres1" class="form-control" id="pres1" placeholder="Prescription1">
+                      </td>
+                      <td>
+                        <select name="routine1" class="form-control" style="width:200px;">
+                          <option>1-0-0</option>
+                          <option>0-1-0</option>
+                          <option>1-0-1</option>
+                          <option>1-1-1</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Prescription2</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select name="type2" class="form-control" style="width:200px;">
+                          <option>Tablet</option>
+                          <option>Syrup</option>
+                          <option>Cream</option>
+                        </select>
+                      </td>
+                      <td>
+                        <input type="text" name="pres2" class="form-control" id="pres2" placeholder="Prescription2">
+                      </td>
+                      <td>
+                        <select name="routine2" class="form-control" style="width:200px;">
+                          <option>1-0-0</option>
+                          <option>0-1-0</option>
+                          <option>1-0-1</option>
+                          <option>1-1-1</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Prescription3</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select name="type3" class="form-control" style="width:200px;">
+                          <option>Tablet</option>
+                          <option>Syrup</option>
+                          <option>Cream</option>
+                        </select>
+                      </td>
+                      <td>
+                        <input type="text" name="pres3" class="form-control" id="pres3" placeholder="Prescription1">
+                      </td>
+                      <td>
+                        <select name="routine3" class="form-control" style="width:200px;">
+                          <option>1-0-0</option>
+                          <option>0-1-0</option>
+                          <option>1-0-1</option>
+                          <option>1-1-1</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-6">
+                  <button class="btn btn-primary w-100 py-3" type="submit">Apply Prescription</button>
+                </div>
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+  {% endblock %}
+</body>
+
+</html>

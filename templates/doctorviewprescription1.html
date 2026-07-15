@@ -1,0 +1,134 @@
+{% extends 'doctorheader.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+{% block content %}
+<style type="text/css">
+		table, tr, td, th{
+		border:1px solid black;
+		border-collapse:collapse;
+		text-align:center;
+		font-size:18px;
+		color:black;
+		}
+		table{
+		width:100%;
+		}
+		th,td{
+		height:50px;
+		}
+</style>
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s"
+     style="background-image:url('static/img/pic1.jpg');">
+    <div class="container py-5">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">Doctor View Prescription</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb text-uppercase mb-0">
+                <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                <li class="breadcrumb-item text-primary active" aria-current="page">Doctor View Prescription</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="d-flex flex-column">
+                    <img class="img-fluid rounded w-75 align-self-end" src="static/img/pic1.jpg" alt="">
+                    <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="static/img/pic2.jpg" alt=""
+                         style="margin-top: -25%;">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <h1 class="mb-4">Doctor View Prescription</h1>
+                <p>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{row['id']}}</td>
+                        </tr>
+                        <tr>
+                            <th>Doctor Id</th>
+                            <td>{{row['DoctorId']}}</td>
+                        </tr>
+                        <tr>
+                            <th>Doctor Name</th>
+                            <td>{{row['FirstName']}}&nbsp;{{row['LastName']}}</td>
+                        </tr>
+                        <tr>
+                            <th>Doctor PhNumber</th>
+                            <td>{{row['PhoneNumber']}}</td>
+                        </tr>
+                        <tr>
+                            <th>Specialization</th>
+                            <td>{{row['Specialization']}}</td>
+                        </tr>
+                        <tr>
+                            <th>Fees</th>
+                            <td>{{row['Price']}}</td>
+                        </tr>
+                        <tr>
+                            <th>User Id</th>
+                            <td>{{row['UserId']}}</td>
+                        </tr>                        
+                        <tr>
+                            <th>Appointment Date</th>
+                            <td>{{row['AppointmentDate']}}</td>
+                        </tr>
+                        <tr>
+                            <th>Appointment Time</th>
+                            <td>{{row['AppointmentTime']}}</td>
+                        </tr>
+                        <tr>
+                            <th>Payment Status</th>
+                            <td>{{row['PaymentStatus']}}</td>
+                        </tr>
+                        <tr>
+                            <th>Prescription1</th>
+                            <td>
+                                {{row['Type1']}} &nbsp;&nbsp; {{row['Prescription1']}} &nbsp;&nbsp;
+                                {{row['Routine1']}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Prescription2</th>
+                            <td>
+                                {{row['Type2']}} &nbsp;&nbsp; {{row['Prescription2']}} &nbsp;&nbsp;
+                                {{row['Routine2']}}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Prescription3</th>
+                            <td>
+                                {{row['Type3']}} &nbsp;&nbsp; {{row['Prescription3']}} &nbsp;&nbsp;
+                                {{row['Routine3']}}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <center>
+                    <input type="button" value="Print" onclick="window.print()" style="width:250px;height:50px;">
+                    </center>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+{% endblock %}
+</body>
+</html>

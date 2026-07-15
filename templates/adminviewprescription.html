@@ -1,0 +1,153 @@
+{% extends 'adminheader.html' %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+</head>
+
+<body class="index-page">
+  {% block content %}
+  <style type="text/css">
+    table,
+    tr,
+    td,
+    th {
+      border: 1px solid black;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    table {
+      width: 80%;
+      margin-left: 100px;
+    }
+  </style>
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Admin View Prescription Page</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/adminmainpage">Home</a></li>
+            <li class="current">Admin View Prescription Page</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- About 2 Section -->
+    <section id="about-2" class="about-2 section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-5">
+            <div class="about-img">
+              <img src="/static/assets/img/Pic1.jfif" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <!-- Tab Content -->
+            <div class="tab-content">
+
+              <div class="tab-pane fade show active" id="about-2-tab1">
+                <h2>Admin View Prescription Page</h2>
+
+                <p>
+                <table>
+                  <tbody>
+                    <tr>
+                      <th>Id</th>
+                      <td>{{row['id']}}</td>
+                    </tr>
+                    <tr>
+                      <th>Doctor Id</th>
+                      <td>{{row['DoctorId']}}</td>
+                    </tr>
+                    <tr>
+                      <th>Doctor Name</th>
+                      <td>{{row['FirstName']}}&nbsp;{{row['LastName']}}</td>
+                    </tr>
+                    <tr>
+                      <th>Doctor PhNumber</th>
+                      <td>{{row['PhoneNumber']}}</td>
+                    </tr>
+                    <tr>
+                      <th>Specialization</th>
+                      <td>{{row['Specialization']}}</td>
+                    </tr>
+                    <tr>
+                      <th>Fees</th>
+                      <td>{{row['DoctorFees']}}</td>
+                    </tr>
+                    <tr>
+                      <th>User Id</th>
+                      <td>{{row['UserId']}}</td>
+                    </tr>
+                    <tr>
+                      <th>Appointment Date</th>
+                      <td>{{row['AppointmentDate']}}</td>
+                    </tr>
+                    <tr>
+                      <th>Appointment Time</th>
+                      <td>{{row['AppointmentTime']}}</td>
+                    </tr>
+                    <tr>
+                      <th>Payment Status</th>
+                      <td>{{row['PaymentStatus']}}</td>
+                    </tr>
+                    <tr>
+                      <th>Prescription1</th>
+                      <td>
+                        {{row['Type1']}} &nbsp;&nbsp; {{row['Prescription1']}} &nbsp;&nbsp;
+                        {{row['Routine1']}}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Prescription2</th>
+                      <td>
+                        {{row['Type2']}} &nbsp;&nbsp; {{row['Prescription2']}} &nbsp;&nbsp;
+                        {{row['Routine2']}}
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th>Prescription3</th>
+                      <td>
+                        {{row['Type3']}} &nbsp;&nbsp; {{row['Prescription3']}} &nbsp;&nbsp;
+                        {{row['Routine3']}}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <center>
+                  <input type="button" value="Print" onclick="window.print()" style="width:250px;height:50px;">
+                </center>
+                </p>
+
+              </div><!-- End Tab 1 Content -->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About 2 Section -->
+
+  </main>
+  {% endblock %}
+
+</body>
+
+</html>

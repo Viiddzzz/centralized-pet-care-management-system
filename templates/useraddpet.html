@@ -1,0 +1,91 @@
+{% extends 'userheader.html'  %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+<body>
+
+  {% block content %}
+  <main class="main">
+<!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">User Add New Pet</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="usermainpage">Home</a></li>
+            <li class="current">User Add New Pet</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <form action="/useraddpet" method="post" data-aos="fade-up" data-aos-delay="200"
+            enctype="multipart/form-data">
+              <div class="row gy-4">
+
+                <div class="col-md-12">
+                  {{msg}}
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" name="pname" class="form-control" placeholder="Pet Name" required=""
+                  maxlength="15">
+                </div>
+
+                <div class="col-md-6 ">
+                  <select class="form-control" name="pettype">
+                      {% for x in pettypes %}
+                        <option>{{x}}</option>
+                      {% endfor %}
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" name="petweight" class="form-control" placeholder="Pet Weight" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="text" class="form-control" name="petheight" placeholder="Pet Height" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="text" class="form-control" name="petcolor" placeholder="Pet Color" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="file" class="form-control" name="file" placeholder="Upload File" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="description" rows="6" placeholder="Pet Description" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <button type="submit" style="width: 150px; height: 75px; border-radius: 10px;">New Pet</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+      </main>
+{% endblock %}
+</body>
+
+</html>
