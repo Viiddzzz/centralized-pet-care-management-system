@@ -95,27 +95,7 @@ Administrators can:
 
 ---
 
-# 📂 Project Structure
 
-```text
-centralized-pet-care-management-system/
-│
-├── static/
-│   ├── css/
-│   ├── js/
-│   ├── images/
-│
-├── templates/
-│
-├── main.py
-├── MailSent.py
-├── DeleteCollections.py
-├── requirements.txt
-├── run.bat
-└── README.md
-```
-
----
 
 # 🔄 System Workflow
 
@@ -183,54 +163,6 @@ http://127.0.0.1:5000/
 
 ---
 
-# 📸 Screenshots
-
-Create a folder named **screenshots** inside your repository and add screenshots like these:
-
-```text
-screenshots/
-├── home.png
-├── login.png
-├── user-dashboard.png
-├── admin-dashboard.png
-├── appointment.png
-├── doctors.png
-├── accessories.png
-```
-
-Then display them in the README:
-
-```markdown
-## Home Page
-
-![Home](screenshots/home.png)
-
-## Login Page
-
-![Login](screenshots/login.png)
-
-## User Dashboard
-
-![User Dashboard](screenshots/user-dashboard.png)
-
-## Admin Dashboard
-
-![Admin Dashboard](screenshots/admin-dashboard.png)
-
-## Appointment Booking
-
-![Appointment](screenshots/appointment.png)
-
-## Doctor Directory
-
-![Doctors](screenshots/doctors.png)
-
-## Pet Accessories
-
-![Accessories](screenshots/accessories.png)
-```
-
----
 
 # 🧪 Testing
 
@@ -313,12 +245,6 @@ Aspiring Software Developer | Python & Full-Stack Web Development Enthusiast
 🌐 GitHub: https://github.com/Viiddzzz
 
 Repository: https://github.com/Viiddzzz/centralized-pet-care-management-system
-
----
-
-# 📄 License
-
-This project is licensed under the MIT License.
 
 ---
 
